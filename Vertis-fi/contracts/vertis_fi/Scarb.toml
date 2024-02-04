@@ -1,14 +1,8 @@
 [package]
-name = "contracts"
+name = "vertis_fi"
 version = "0.1.0"
+edition = "2023_11"
 
 # See more keys and their definitions at https://docs.swmansion.com/scarb/docs/reference/manifest.html
 
 [dependencies]
-starknet = ">=2.3.0-rc0"
-
-[lib]
-sierra = true
-casm = false
-
-[[target.starknet-contract]]
