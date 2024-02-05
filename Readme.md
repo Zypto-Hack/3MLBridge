@@ -1,6 +1,5 @@
 # 3ML_Bridge and Decentralized Exchange
 
-
  3ML_Bridge  makes use of the Herodotus Api to enable bridgeing tokens between the starknet chain annd other chain like ethereum, polygon and the binance chain and also facilitates exchange of both currencies and tokens.
 
 ## Table of Contents
@@ -11,8 +10,6 @@
     - [Installation](#installation)
 3. [Usage](#usage)
     - [Herodotus Bridge](#herodotus-bridge)
-    - [Decentralized Exchange](#decentralized-exchange)
-
 
 ## Features
 
@@ -23,25 +20,35 @@
     - Allows users to transfer **tokens from or to** starknet.
 
 2. **Cross-Chain Communication:**
-    - Establish communication with Ethereum and Binance Smart Chain for cross-chain operations from the starknet chain.
+    - Establish communication with Ethereum and other supported chains for cross-chain operations from the starknet chain.
     - Implement the Herodotus messaging protocol for secure data exchange.
     - An information or bloglike page for where users can view realtime information about coins/ tokens  on different chains and their bridge market value.
 
 3. **Trading Pairs:**
     - Support trading pairs such as ETH/BUSD, BTC/USDT, etc.
     - Use the decentralized exchange API with endpoints like `/trade` and `/market` for trading operations.
+4. **Swap:**
+    - The jediSwap V2 contract is used to facilitate smooth swap between tokens for user's better experience.
 
-4. **Order Book Management:**
+5. **Order Book Management:**
     - Implement order matching algorithms for efficient trade execution.
     - Manage order books with the `/orderbook` endpoint.
 
-5. **Liquidity Pool:**
+6. **Liquidity Pool:**
     - Enable users to contribute liquidity using the `/liquidity` endpoint.
     - Implement automated market-making (AMM) for efficient liquidity provision.
 
+7. **Lending Feature:**
+    - Enable users to Borrow assets.
+    - over-collateralization issue when lending to users is managed by making use of accurate real time exchange data for supported collaterals.
+
+8. **Staking Feature:**
+    - Users an participate in staking of assets on tthe staking page with good yeild over time.
+
+9. **Storage proof Interface:**
+    - Interface where developers can easily check for storage proofs without a need to write codes. This could be a playground to demostrate how the heterodus api can be used by developers.
 
 # Getting Started
-
 
 ### Installation
 
