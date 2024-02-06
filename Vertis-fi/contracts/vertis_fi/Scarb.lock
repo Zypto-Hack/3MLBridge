@@ -2,5 +2,13 @@
 version = 1
 
 [[package]]
+name = "pragma_lib"
+version = "1.0.0"
+source = "git+https://github.com/astraly-labs/pragma-lib#6691803389f96de872dfef4fd666d62668f51bc8"
+
+[[package]]
 name = "vertis_fi"
 version = "0.1.0"
+dependencies = [
+ "pragma_lib",
+]

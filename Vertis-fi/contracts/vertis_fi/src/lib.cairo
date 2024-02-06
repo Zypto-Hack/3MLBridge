@@ -1,4 +1,2 @@
-#[starknet::contract]
-mod Vertis_fi {
-    
-}
+mod pricefeed;
+mod vertis_fi;
