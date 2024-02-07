@@ -133,6 +133,7 @@ mod Vertis_fi {
 
     #[abi(embed_v0)]
     impl IJediSwapV2FactoryImpl of IJediSwapV2Factory<ContractState> {
+        /// creates a new liquidity pool
         fn create_pool(
             ref self: ContractState, token_a: ContractAddress, token_b: ContractAddress, fee: u32
         ) -> ContractAddress {
@@ -145,47 +146,56 @@ mod Vertis_fi {
             return pool_address;
         }
 
+        /// returns address of a particular pool
         fn get_pool(
             self: @ContractState, token_a: ContractAddress, token_b: ContractAddress, fee: u32
         ) -> ContractAddress {
             self.Jediswap.read().get_pool(token_a, token_b, fee)
         }
 
-        fn get_fee_protocol(self: @ContractState) -> u8 {
-            self.Jediswap.read().get_fee_protocol()
-        }
 
         fn fee_amount_tick_spacing(self: @ContractState, fee: u32) -> u32 {
             self.Jediswap.read().fee_amount_tick_spacing(fee)
         }
 
+        /// sets the amount to be paid as fees for each pool
         fn enable_fee_amount(ref self: ContractState, fee: u32, tick_spacing: u32) {
             self.Jediswap.read().enable_fee_amount(fee, tick_spacing);
         }
 
+        /// sets the portion of the collected fees that goes to the protocol
         fn set_fee_protocol(ref self: ContractState, fee_protocol: u8) {
             self.Jediswap.read().set_fee_protocol(fee_protocol);
+        }
+
+        fn get_fee_protocol(self: @ContractState) -> u8 {
+            self.Jediswap.read().get_fee_protocol()
         }
     }
 
     #[abi(embed_v0)]
     impl IJediSwapV2SwapRouterImpl of IJediSwapV2SwapRouter<ContractState> {
+        /// returns address of factory contract
         fn get_factory(self: @ContractState) -> ContractAddress {
             self.SwapRouter.read().get_factory()
         }
 
+        /// Swaps "amount_in" of one token for as much as possible of the other token
         fn exact_input_single(ref self: ContractState, params: ExactInputSingleParams) -> u256 {
             self.SwapRouter.read().exact_input_single(params)
         }
 
+        /// Swaps "amount_in" of one token for as much as possible of another along a specified path
         fn exact_input(ref self: ContractState, params: ExactInputParams) -> u256 {
             self.SwapRouter.read().exact_input(params)
         }
 
+        /// Swaps as little as possible of one token for exact "amount_out" of another token
         fn exact_output_single(ref self: ContractState, params: ExactOutputSingleParams) -> u256 {
             self.SwapRouter.read().exact_output_single(params)
         }
 
+        /// Swaps as little as possible of one token for amount_out of another along a specified path
         fn exact_output(ref self: ContractState, params: ExactOutputParams) -> u256 {
             self.SwapRouter.read().exact_output(params)
         }
@@ -203,7 +213,7 @@ mod Vertis_fi {
         } // 6369313530
     }
 
-    #[external(v0)]
+    #[abi(embed_v0)]
     impl IOwnableImpl of IOwnable<ContractState> {
         fn owner(self: @ContractState) -> ContractAddress {
             self.Owner.read().owner()
@@ -217,4 +227,4 @@ mod Vertis_fi {
             self.Owner.read().renounce_ownership();
         }
     }
-}
+} 
