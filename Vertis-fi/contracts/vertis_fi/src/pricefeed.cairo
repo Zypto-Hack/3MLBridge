@@ -17,7 +17,6 @@ mod Vertis_fi_pricefeed {
     // const KEY_USDC: felt252 = 'USDC/USD';
     // const KEY_LUSD: felt252 = 'LUSD/USD';
 
-
     // const BTC_PAIR_ID: u128 = 18669995996566340;
     // const ETH_PAIR_ID: u128 = 19514442401534788;
     // const WBTC_PAIR_ID: u128 = 6287680677296296772;
@@ -43,7 +42,7 @@ mod Vertis_fi_pricefeed {
 
     #[abi(embed_v0)]
     fn get_asset_price(ref self: ContractState, key: felt252) -> u128 {
-        let pragma_address:ContractAddress = self.pragma_contract.read();
+        let pragma_address: ContractAddress = self.pragma_contract.read();
         self.get_asset_price_median(pragma_address, DataType::SpotEntry(key))
     }
 
