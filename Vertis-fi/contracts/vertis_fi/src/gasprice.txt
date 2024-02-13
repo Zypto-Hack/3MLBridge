@@ -1,0 +1,9 @@
+
+We are fetching gas price from Voyager endpoint, so we make use of Axiom
+to this url: https://docs.voyager.online/
+
+Use this API key: oeW5XBMq0R12VCnXAKFji1S6t8lszUE17Q75zOe..X (ask for the missing ones inbox)
+
+We can then filter the gasprice from the block details returned...
+
+reference this website for more info: https://docs.voyager.online/#get-/blocks/-blockHash-
