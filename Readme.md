@@ -66,3 +66,9 @@ npm install
 ```
 
 3. Configure environment variables:
+   
+
+<br />
+### Deployed Contracts
+Swap address on Goerli: 0x00c6f504626a6eeee117998150bdbf9d9678f2861ce87bb2550a2624506914ed
+Pragma Oracle Address: 0x0289d94a29515e5f30ffd5a45667ae087d69ba1a65e198c90c1cc9d34868badf
